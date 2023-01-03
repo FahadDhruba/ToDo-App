@@ -7,7 +7,7 @@ if (isset($_GET['type']) && $_GET['type']=='delete')
 {
     $id=mysqli_real_escape_string($con,$_GET['id']);
     mysqli_query($con,"DELETE FROM todos WHERE `todos`.`id` = '$id'"); 
-    header('location:/TODO'); 
+    header('location:/'); 
 };
 
 if (isset($_GET['type']) && $_GET['type']=='status') 
@@ -17,11 +17,11 @@ if (isset($_GET['type']) && $_GET['type']=='status')
     if ($status=='checked') {
         $sqlRun1="UPDATE `todos` SET `checked` = '1' WHERE `todos`.`id` = '$id'";
         mysqli_query($con,$sqlRun1);
-        header('location:/TODO'); 
+        header('location:/'); 
     } else {
         $sqlRun1="UPDATE `todos` SET `checked` = '0' WHERE `todos`.`id` = '$id'";
         mysqli_query($con,$sqlRun1);
-        header('location:/TODO'); 
+        header('location:/'); 
     }
 };
 
